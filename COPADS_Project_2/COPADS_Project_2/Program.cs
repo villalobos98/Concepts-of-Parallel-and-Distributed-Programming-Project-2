@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -93,7 +94,16 @@ namespace COPADS_Project_2
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
                     {
+                        Stopwatch stopWatch = new Stopwatch();
+                        stopWatch.Start();
                         serialPrimeNumber(bitsArgument, tracker, countsArgument);
+                        stopWatch.Stop();
+                        TimeSpan ts = stopWatch.Elapsed;
+                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                                            ts.Hours, ts.Minutes, ts.Seconds,
+                                            ts.Milliseconds / 10);
+                        Console.WriteLine("Time to Generate: " + elapsedTime);
+
                     }
                     else
                     {
@@ -112,7 +122,18 @@ namespace COPADS_Project_2
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
                     {
+
+                        Stopwatch stopWatch = new Stopwatch();
+                        stopWatch.Start();
                         parallelPrimeFunction(bitsArgument, countsArgument);
+                        stopWatch.Stop();
+                        TimeSpan ts = stopWatch.Elapsed;
+
+                        // Format and display the TimeSpan value.
+                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                            ts.Hours, ts.Minutes, ts.Seconds,
+                            ts.Milliseconds / 10);
+                        Console.WriteLine("Time to Generate: " + elapsedTime);
                     }
                     else
                     {
