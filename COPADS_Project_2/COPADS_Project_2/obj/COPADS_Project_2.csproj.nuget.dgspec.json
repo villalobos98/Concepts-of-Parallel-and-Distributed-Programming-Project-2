@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj": {}
+    "C:\\Users\\Isaias Villalobos\\Source\\Repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj": {
+    "C:\\Users\\Isaias Villalobos\\Source\\Repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
+        "projectUniqueName": "C:\\Users\\Isaias Villalobos\\Source\\Repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
         "projectName": "COPADS_Project_2",
-        "projectPath": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
+        "projectPath": "C:\\Users\\Isaias Villalobos\\Source\\Repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
         "packagesPath": "C:\\Users\\Isaias Villalobos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\obj\\",
+        "outputPath": "C:\\Users\\Isaias Villalobos\\Source\\Repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

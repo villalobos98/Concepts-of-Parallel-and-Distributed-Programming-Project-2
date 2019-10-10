@@ -62,7 +62,9 @@ namespace COPADS_Project_2
                     if (prime)
                     {
                         tracker += 1;
+                        Console.Write(tracker.ToString() + ": ");
                         Console.WriteLine(primeNumber);
+                        Console.WriteLine();
                     }
                 }
 
@@ -91,13 +93,19 @@ namespace COPADS_Project_2
                     var countsArgument = 1;
                     var tracker = 0;
 
+                    Console.Write("BitLength: ");
+                    Console.WriteLine(bitsArgument.ToString() + " bits");
+
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
                     {
+
                         Stopwatch stopWatch = new Stopwatch();
                         stopWatch.Start();
                         serialPrimeNumber(bitsArgument, tracker, countsArgument);
                         stopWatch.Stop();
+
+
                         TimeSpan ts = stopWatch.Elapsed;
                         string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                                             ts.Hours, ts.Minutes, ts.Seconds,
@@ -118,6 +126,8 @@ namespace COPADS_Project_2
                     var bitsArgument = Convert.ToInt32(args[0].ToString());
                     var countsArgument = Convert.ToInt32(args[1].ToString());
 
+                    Console.Write("BitLength: ");
+                    Console.WriteLine(bitsArgument.ToString() + " bits");
 
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
