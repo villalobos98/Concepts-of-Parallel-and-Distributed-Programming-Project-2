@@ -6,12 +6,15 @@
 
 using COPADS_Project_2;
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 public class PrimeFunction
 {
+    private readonly object locker = new object();
+
         public BigInteger GeneratePrimeNumber(int bitSize)
         {
             RNGCryptoServiceProvider randomNumbers = new RNGCryptoServiceProvider();
@@ -23,41 +26,41 @@ public class PrimeFunction
             
             return bigInt;
         }
-
+        
         public bool checkPrimeNumber(BigInteger bigInt)
         {
-            var checkPrime = new Extension();
-            var isPrime = checkPrime.IsProbablyPrime(bigInt);
+            var isPrime = bigInt.IsProbablyPrime();
             return isPrime;
         }
 
         public void parallelPrimeFunction(int bitSize, int countsArgument)
         {
-            var tracker = 0;
+            List<BigInteger> intList = new List<BigInteger>();
+            int numPrimeSeen = 0;
 
             Parallel.For(0, countsArgument, i =>
             {
-
-                while (tracker != countsArgument)
+              
+                var primeNumber = GeneratePrimeNumber(bitSize);
+                var isPrime = checkPrimeNumber(primeNumber);
+                lock (locker)
                 {
-                    var primeNumber = GeneratePrimeNumber(bitSize);
-                    var isPrime = checkPrimeNumber(primeNumber);
-
-                 
                     if (isPrime)
                     {
-                        tracker += 1;
+                        numPrimeSeen += 1;
+                        intList.Add(primeNumber);
+                  
 
-                        Console.Write(tracker.ToString() + ": ");
-                        Console.WriteLine(primeNumber);
-
-                        if (tracker < countsArgument)
-                        {
-                            Console.WriteLine();
-                        }
                     }
                 }
+                
 
             });
-        }
+
+            for(int i = 0; i < intList.Count; i++)
+            {
+                Console.Write(i + ": " + intList[i]);
+            }
+
+    }
 }

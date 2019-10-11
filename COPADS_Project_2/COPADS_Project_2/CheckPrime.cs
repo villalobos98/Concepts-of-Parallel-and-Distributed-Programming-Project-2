@@ -12,10 +12,10 @@ using System.Numerics;
 namespace COPADS_Project_2
 {
 
-    public class Extension
+    public static class Extension
     {
 
-        public bool IsProbablyPrime(BigInteger value, int witnesses = 10)
+        public static bool IsProbablyPrime(this BigInteger value, int witnesses = 10)
         {
             if (value <= 1) return false;
             if (witnesses <= 0) witnesses = 10;
