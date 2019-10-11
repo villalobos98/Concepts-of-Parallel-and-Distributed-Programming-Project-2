@@ -12,7 +12,7 @@ namespace COPADS_Project_2
     public class Program
     {
 
-        public  void CallParallelPrimeNumber(int bitsArgument, int countsArgument)
+        public void CallParallelPrimeNumber(int bitsArgument, int countsArgument)
         {
             PrimeFunction functions = new PrimeFunction();
             functions.parallelPrimeFunction(bitsArgument, countsArgument);
