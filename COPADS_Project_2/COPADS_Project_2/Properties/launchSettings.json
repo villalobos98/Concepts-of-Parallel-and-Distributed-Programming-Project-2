@@ -1,8 +1,7 @@
 {
   "profiles": {
     "COPADS_Project_2": {
-      "commandName": "Project",
-      "commandLineArgs": "1024 2"
+      "commandName": "Project"
     }
   }
 }

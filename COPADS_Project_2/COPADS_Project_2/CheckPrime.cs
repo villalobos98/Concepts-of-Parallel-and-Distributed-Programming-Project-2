@@ -1,8 +1,17 @@
-﻿using System;
+﻿//@author: Isaias Villalobos
+//@date: 10/10/2019
+//@version: A simple extension class. Will allow use of extension method.
+//Description: This class contains one class which will a thorough check of a value that is a BigInteger.
+//             The purpose of the BigInteger class is that, generating prime numbers that are very large,
+//             can be handled by this class. Regular types will not be helpful. The isProbablyPrime class, 
+//             can check if a value, aka prime number is indeed a prime number.
+
+using System;
 using System.Numerics;
 
 namespace COPADS_Project_2
 {
+
     public class Extension
     {
 
@@ -39,6 +48,5 @@ namespace COPADS_Project_2
             }
             return true;
         }
-
     }
 }
