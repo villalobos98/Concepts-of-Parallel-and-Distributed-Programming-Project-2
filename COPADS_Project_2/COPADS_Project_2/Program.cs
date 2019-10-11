@@ -12,12 +12,6 @@ namespace COPADS_Project_2
     public class Program
     {
 
-        public  void CallSerialPrimeNumber(int bitsArgument,int countsArgument)
-        {
-            PrimeFunction functions = new PrimeFunction();
-            functions.serialPrimeNumber(bitsArgument, countsArgument);
-        }
-        
         public  void CallParallelPrimeNumber(int bitsArgument, int countsArgument)
         {
             PrimeFunction functions = new PrimeFunction();
@@ -44,7 +38,7 @@ namespace COPADS_Project_2
                     var bitsArgument = Convert.ToInt32(args[0].ToString());
                     var countsArgument = 1;
 
-                    Console.Write("BitLength: " + bitsArgument.ToString() + " bits");
+                    Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
@@ -53,14 +47,14 @@ namespace COPADS_Project_2
                         Stopwatch stopWatch = new Stopwatch();
                         stopWatch.Start();
                         Program program = new Program();
-                        program.CallSerialPrimeNumber(bitsArgument, countsArgument);
+                        program.CallParallelPrimeNumber(bitsArgument, countsArgument);
                         stopWatch.Stop();
 
 
                         TimeSpan ts = stopWatch.Elapsed;
                         string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                                             ts.Hours, ts.Minutes, ts.Seconds,
-                                            ts.Milliseconds / 10);
+                                            ts.Milliseconds);
                         Console.WriteLine("Time to Generate: " + elapsedTime);
 
                     }
@@ -77,7 +71,7 @@ namespace COPADS_Project_2
                     var bitsArgument = Convert.ToInt32(args[0].ToString());
                     var countsArgument = Convert.ToInt32(args[1].ToString());
 
-                    Console.Write("BitLength: " + bitsArgument.ToString() + " bits");
+                    Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
@@ -92,7 +86,7 @@ namespace COPADS_Project_2
                         TimeSpan ts = stopWatch.Elapsed;
                         string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                             ts.Hours, ts.Minutes, ts.Seconds,
-                            ts.Milliseconds / 10);
+                            ts.Milliseconds);
 
                         Console.WriteLine("Time to Generate: " + elapsedTime);
                     }

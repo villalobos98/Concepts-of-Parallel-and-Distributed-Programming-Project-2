@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 public class PrimeFunction
 {
-        
         public BigInteger GeneratePrimeNumber(int bitSize)
         {
             RNGCryptoServiceProvider randomNumbers = new RNGCryptoServiceProvider();
@@ -32,43 +31,32 @@ public class PrimeFunction
             return isPrime;
         }
 
-        public void serialPrimeNumber(int bitSize, int countsArgument)
-        {
-            var tracker = 0;
-            //loop until your find 'count' many prime numbers
-            while (tracker != countsArgument)
-            {
-                var primeNumber = GeneratePrimeNumber(bitSize);
-                var prime = checkPrimeNumber(primeNumber);
-
-                //If number is prime then your should print.
-                if (prime)
-                {
-                    tracker += 1;
-                    Console.WriteLine(primeNumber);
-                }
-            }
-        }
-
         public void parallelPrimeFunction(int bitSize, int countsArgument)
         {
             var tracker = 0;
-            Parallel.For(0, countsArgument, i =>
-            {
-                while (tracker != countsArgument)
-                {
-                    var primeNumber = GeneratePrimeNumber(bitSize);
-                    var isPrime = checkPrimeNumber(primeNumber);
 
-                    //If number is prime then your should print.
-                    if (isPrime)
+            Parallel.For(0, countsArgument, i =>
+                {
+
+                    while (tracker != countsArgument)
                     {
-                        tracker += 1;
-                        Console.Write(tracker.ToString() + ": ");
-                        Console.WriteLine(primeNumber);
-                        Console.WriteLine();
+                        var primeNumber = GeneratePrimeNumber(bitSize);
+                        var isPrime = checkPrimeNumber(primeNumber);
+
+                 
+                        if (isPrime)
+                        {
+                            tracker += 1;
+
+                            Console.Write(tracker.ToString() + ": ");
+                            Console.WriteLine(primeNumber);
+
+                            if (tracker < countsArgument)
+                            {
+                                Console.WriteLine();
+                            }
+                        }
                     }
-                }
             });
         }
 }
