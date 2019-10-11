@@ -36,27 +36,27 @@ public class PrimeFunction
             var tracker = 0;
 
             Parallel.For(0, countsArgument, i =>
-                {
+            {
 
-                    while (tracker != countsArgument)
-                    {
-                        var primeNumber = GeneratePrimeNumber(bitSize);
-                        var isPrime = checkPrimeNumber(primeNumber);
+                while (tracker != countsArgument)
+                {
+                    var primeNumber = GeneratePrimeNumber(bitSize);
+                    var isPrime = checkPrimeNumber(primeNumber);
 
                  
-                        if (isPrime)
+                    if (isPrime)
+                    {
+                        tracker += 1;
+
+                        Console.Write(tracker.ToString() + ": ");
+                        Console.WriteLine(primeNumber);
+
+                        if (tracker < countsArgument)
                         {
-                            tracker += 1;
-
-                            Console.Write(tracker.ToString() + ": ");
-                            Console.WriteLine(primeNumber);
-
-                            if (tracker < countsArgument)
-                            {
-                                Console.WriteLine();
-                            }
+                            Console.WriteLine();
                         }
                     }
+                }
             });
         }
 }

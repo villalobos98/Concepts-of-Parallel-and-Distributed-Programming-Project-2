@@ -52,9 +52,8 @@ namespace COPADS_Project_2
 
 
                         TimeSpan ts = stopWatch.Elapsed;
-                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                                            ts.Hours, ts.Minutes, ts.Seconds,
-                                            ts.Milliseconds);
+                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", 
+                                                            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
                         Console.WriteLine("Time to Generate: " + elapsedTime);
 
                     }
@@ -85,8 +84,7 @@ namespace COPADS_Project_2
 
                         TimeSpan ts = stopWatch.Elapsed;
                         string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                            ts.Hours, ts.Minutes, ts.Seconds,
-                            ts.Milliseconds);
+                                                    ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
 
                         Console.WriteLine("Time to Generate: " + elapsedTime);
                     }
