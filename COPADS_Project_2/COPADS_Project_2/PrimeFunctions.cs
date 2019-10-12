@@ -13,9 +13,12 @@ using System.Threading.Tasks;
 
 public class PrimeFunction
 {
-    private readonly object locker = new object();
+    private object locker = new object();
 
-        public BigInteger GeneratePrimeNumber(int bitSize)
+    //This functions will make sure to generate a prime number according to the 
+    //documentation provided
+    //Returns a BigInteger
+    public BigInteger GeneratePrimeNumber(int bitSize)
         {
             RNGCryptoServiceProvider randomNumbers = new RNGCryptoServiceProvider();
             byte[] byteArray = new Byte[bitSize / 8];
@@ -27,6 +30,9 @@ public class PrimeFunction
             return bigInt;
         }
         
+        //This should be using the extension class properly now.
+        //This functions is going to check if a bigInt is prime.
+        //Returns a boolean
         public bool checkPrimeNumber(BigInteger bigInt)
         {
             var isPrime = bigInt.IsProbablyPrime();
@@ -36,30 +42,36 @@ public class PrimeFunction
         public void parallelPrimeFunction(int bitSize, int countsArgument)
         {
             List<BigInteger> intList = new List<BigInteger>();
-            int numPrimeSeen = 0;
 
-            Parallel.For(0, countsArgument, i =>
+            Parallel.For(0, Int32.MaxValue, (i, state) =>
             {
-              
+                
                 var primeNumber = GeneratePrimeNumber(bitSize);
                 var isPrime = checkPrimeNumber(primeNumber);
-                lock (locker)
+
+                if (isPrime)
                 {
-                    if (isPrime)
+                    if (countsArgument <= intList.Count) 
                     {
-                        numPrimeSeen += 1;
-                        intList.Add(primeNumber);
-                  
-
+                        state.Break();
                     }
-                }
-                
 
+                    lock (locker)
+                    {
+                        intList.Add(primeNumber);
+                    }
+
+                }
             });
 
-            for(int i = 0; i < intList.Count; i++)
+            for(int i = 0; i < countsArgument; i++)
             {
-                Console.Write(i + ": " + intList[i]);
+                int index = i + 1;
+                Console.WriteLine(index + ": " + intList[i]);
+                if(i < countsArgument - 1)  
+                {
+                    Console.WriteLine("");
+                }
             }
 
     }
