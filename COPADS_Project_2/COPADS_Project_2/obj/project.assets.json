@@ -694,9 +694,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
-      "projectName": "COPADS_Project_2",
-      "projectPath": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\COPADS_Project_2.csproj",
+      "projectUniqueName": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\PrimeGen.csproj",
+      "projectName": "PrimeGen",
+      "projectPath": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\PrimeGen.csproj",
       "packagesPath": "C:\\Users\\Isaias Villalobos\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Isaias Villalobos\\source\\repos\\villalobos98\\CopadsProjects\\COPADS_Project_2\\COPADS_Project_2\\obj\\",
       "projectStyle": "PackageReference",

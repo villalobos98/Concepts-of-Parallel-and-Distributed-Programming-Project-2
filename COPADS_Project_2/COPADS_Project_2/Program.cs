@@ -38,11 +38,11 @@ namespace COPADS_Project_2
                     var bitsArgument = Convert.ToInt32(args[0].ToString());
                     var countsArgument = 1;
 
-                    Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
                     {
+                        Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                         Stopwatch stopWatch = new Stopwatch();
                         stopWatch.Start();
@@ -52,14 +52,18 @@ namespace COPADS_Project_2
 
 
                         TimeSpan ts = stopWatch.Elapsed;
-                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", 
-                                                            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                        Console.WriteLine("Time to Generate: " + elapsedTime);
+                        string str = ts.ToString(@"hh\:mm\:ss\.fffffff");
+
+                        Console.WriteLine("Time to Generate: " + str);
+
 
                     }
                     else
                     {
-                        Console.Error.WriteLine("The number is needs to be at least 32 bits and multiple of 8");
+                        Console.Error.WriteLine("dotnet run PrimeGen <bits> <count = 1>");
+                        Console.Error.WriteLine("    - bits - the number of bits of the prime number, this must be a");
+                        Console.Error.WriteLine("      multiple of 8, and at least 32 bits.");
+                        Console.Error.WriteLine("    - count - the number of prime numbers to generate, defaults to 1");
                     }
                 }
 
@@ -70,11 +74,11 @@ namespace COPADS_Project_2
                     var bitsArgument = Convert.ToInt32(args[0].ToString());
                     var countsArgument = Convert.ToInt32(args[1].ToString());
 
-                    Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                     //The number is multiple of 8
                     if (bitsArgument % 8 == 0 && bitsArgument >= 32)
                     {
+                        Console.WriteLine("BitLength: " + bitsArgument.ToString() + " bits");
 
                         Stopwatch stopWatch = new Stopwatch();
                         stopWatch.Start();
@@ -83,14 +87,18 @@ namespace COPADS_Project_2
                         stopWatch.Stop();
 
                         TimeSpan ts = stopWatch.Elapsed;
-                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                                                    ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                        string str = ts.ToString(@"hh\:mm\:ss\.fffffff");
 
-                        Console.WriteLine("Time to Generate: " + elapsedTime);
+                        Console.WriteLine("Time to Generate: " + str);
+
+
                     }
                     else
                     {
-                        Console.Error.WriteLine("The number is needs to be at least 32 bits and multiple of 8");
+                        Console.Error.WriteLine("dotnet run PrimeGen <bits> <count = 1>");
+                        Console.Error.WriteLine("    - bits - the number of bits of the prime number, this must be a");
+                        Console.Error.WriteLine("      multiple of 8, and at least 32 bits.");
+                        Console.Error.WriteLine("    - count - the number of prime numbers to generate, defaults to 1");
                     }
                 }
             }

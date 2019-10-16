@@ -8,4 +8,3 @@ C:\Users\Isaias Villalobos\source\repos\villalobos98\CopadsProjects\COPADS_Proje
 C:\Users\Isaias Villalobos\source\repos\villalobos98\CopadsProjects\COPADS_Project_2\COPADS_Project_2\obj\Debug\netcoreapp2.1\COPADS_Project_2.dll
 C:\Users\Isaias Villalobos\source\repos\villalobos98\CopadsProjects\COPADS_Project_2\COPADS_Project_2\obj\Debug\netcoreapp2.1\COPADS_Project_2.pdb
 C:\Users\Isaias Villalobos\source\repos\villalobos98\CopadsProjects\COPADS_Project_2\COPADS_Project_2\obj\Debug\netcoreapp2.1\COPADS_Project_2.csprojAssemblyReference.cache
-C:\Users\Isaias Villalobos\source\repos\villalobos98\CopadsProjects\COPADS_Project_2\COPADS_Project_2\obj\Debug\netcoreapp2.1\COPADS_Project_2.csproj.CoreCompileInputs.cache

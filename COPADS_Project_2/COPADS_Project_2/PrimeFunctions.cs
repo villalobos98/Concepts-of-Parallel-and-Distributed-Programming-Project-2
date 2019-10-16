@@ -55,7 +55,6 @@ public class PrimeFunction
                     {
                         state.Break();
                     }
-
                     lock (locker)
                     {
                         intList.Add(primeNumber);
@@ -63,7 +62,7 @@ public class PrimeFunction
 
                 }
             });
-
+            //This does all the printing for the integers inside the intList.
             for(int i = 0; i < countsArgument; i++)
             {
                 int index = i + 1;
