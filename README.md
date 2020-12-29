@@ -1,2 +1,3 @@
 # COPADS Project 2
-Projects Completed in Concepts of Parallel and Distributed Systems
+- Implementation of a Prime Number Generator using multiple threads
+- To be used in Project 3
